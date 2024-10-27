@@ -1,31 +1,67 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-struct node{
+struct node {
     int data;
     struct node *next;
     struct node *prev;
 };
-struct node *head = NULL,*temp;
 
-void createNode(){
+struct node *head = NULL, *tail = NULL;
+
+void createNode() {
     struct node *newnode;
     newnode = (struct node*)malloc(sizeof(struct node));
     printf("Enter Data: ");
-    scanf("%d",&newnode->data);
+    scanf("%d", &newnode->data);
     newnode->next = NULL;
     newnode->prev = NULL;
 
+    if (head == NULL) {
+        head = tail = newnode;
+    } else {
+        tail->next = newnode;
+        newnode->prev = tail;
+        tail = newnode;
+    }
+}
+
+void insertFirst() {
+    struct node *newnode;
+    newnode = (struct node*)malloc(sizeof(struct node));
+    printf("Enter data you want to insert: ");
+    scanf("%d", &newnode->data);
+
+    newnode->prev = NULL;
+    newnode->next = NULL;
+
+    if (head == NULL) {
+        head = tail = newnode;
+    } else {
+        head->prev = newnode;
+        newnode->next = head;
+        head = newnode;
+    }
+}
+void insertEnd(){
+    struct node *newnode;
+    newnode = (struct node*)malloc(sizeof(struct node));
+
+    printf("Enter data you want to insert: ");
+    scanf("%d",&newnode->data);
+
+    newnode->prev = NULL;
+    newnode->next = NULL;
     if(head == NULL){
-        head = temp = newnode;
+        head = tail = newnode;
     }
     else{
-        temp->next = newnode;
-        newnode->prev = temp;
-        temp = newnode;
+    tail->next = newnode;
+    newnode->prev = tail;
+    tail = newnode;
     }
-
 }
+
 void displayList() {
     struct node *temp = head;
     if (temp == NULL) {
@@ -53,7 +89,7 @@ int main() {
         printf("5. Delete from beginning\n");
         printf("6. Delete from End\n");
         printf("7. Delete at a specific position\n");
-        printf("8. Fint the length of Linked list\n");
+        printf("8. Find the length of Linked list\n");
         printf("9. Reverse Linked list\n");
         printf("10. Search Item\n");
         printf("11. Display List\n");
@@ -65,12 +101,12 @@ int main() {
             case 1:
                 createNode();
                 break;
-            // case 2:
-            //     insertFirst();
-            //     break;
-            // case 3:
-            //     insertEnd();
-            //     break;
+            case 2:
+                insertFirst();
+                break;
+            case 3:
+                insertEnd();
+                break;
             // case 4:
             //     insertSpecificPosition();
             //     break;
@@ -102,7 +138,6 @@ int main() {
                 printf("Invalid choice. Please try again.\n");
         }
     } while (choice != 0); 
-
 
     displayList();  
     
