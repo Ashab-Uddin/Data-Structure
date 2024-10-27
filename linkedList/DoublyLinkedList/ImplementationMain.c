@@ -101,6 +101,42 @@ void insertSpecificPosition(){
     }
 
 
+    void  DeleteFromBeg(){
+        struct node *temp;
+        if(head == NULL){
+            printf("The List is Empty");
+        }
+        else{
+        temp = head;
+        head = head->next;
+        head->prev = NULL;
+
+        //for better perfomance
+        /* if (head != NULL) {
+            head->prev = NULL;  // Update head's previous pointer
+        } else {
+            printf("The list is now empty after deletion.\n");
+        }*/
+
+        free(temp);  
+    }
+        
+    }
+
+    void DeleteEnd(){
+        struct node *temp;
+        if(tail == NULL){
+            printf("The list is Empty");
+        }
+        else{
+            temp = tail;
+            tail->prev->next = NULL;
+            tail = tail->prev;
+            free(temp);
+        }
+    }
+
+
 void displayList() {
     struct node *temp = head;
     if (temp == NULL) {
@@ -149,15 +185,15 @@ int main() {
             case 4:
                 insertSpecificPosition();
                 break;
-            // case 5:
-            //     DeleteFromBeg();
-            //     break;
-            // case 6:
-            //     DeleteEnd();
-            //     break;
-            // case 7:
-            //     DeleteAny();
-            //     break;
+            case 5:
+                DeleteFromBeg();
+                break;
+            case 6:
+                DeleteEnd();
+                break;
+            case 7:
+                DeleteAny();
+                break;
             // case 8:
             //     GetLength();
             //     break;
