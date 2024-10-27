@@ -136,6 +136,51 @@ void insertSpecificPosition(){
         }
     }
 
+    void DeleteAny(){
+        struct node *temp;
+        int pos,i = 1;
+
+        temp = head;
+        printf("Enter the position you want to delete: ");
+        scanf("%d",&pos);
+        if(pos == 1){
+            DeleteFromBeg();
+            return;
+        }
+        while(i<pos){
+            temp = temp->next;
+            i++;
+        }
+        temp->prev->next = temp->next;
+        temp->next->prev=temp->prev;
+        free(temp);
+        
+    }
+    void Search() {
+    struct node *temp;
+    int item, position = 1;  // Initialize position to 1 for the head node
+    printf("Enter the item you want to search: ");
+    scanf("%d", &item);
+
+    temp = head;
+
+    if (temp == NULL) {
+        printf("The list is empty.\n");
+        return;
+    }
+
+    while (temp != NULL) {
+        if (temp->data == item) {
+            printf("Item %d is found at position %d\n", item, position);
+            return; 
+        }
+        temp = temp->next;
+        position++;
+    }
+    printf("Item %d is not found in the list.\n", item);
+}
+
+
 
 void displayList() {
     struct node *temp = head;
@@ -200,9 +245,9 @@ int main() {
             // case 9:
             //     ReverseList();
             //     break;
-            // case 10:
-            //     Search();
-            //     break;
+            case 10:
+                Search();
+                break;
             case 11:
                 displayList();
                 break;
