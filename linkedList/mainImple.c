@@ -53,11 +53,47 @@ void insertEnd(){
 
 }
 void insertSpecificPosition(){
-    int pos,int i =1;
-    struct node *newnode,*temp;
-    printf("Enter the Position: ");
-    scanf("%d",&pos);
+    int pos, i = 1;
+    struct node *newnode, *temp;
 
+    newnode = (struct node*)malloc(sizeof(struct node));
+
+    printf("Enter the position to insert the new node: ");
+    scanf("%d", &pos);
+    printf("Enter data you want to insert at position %d: ", pos);
+    scanf("%d", &newnode->data);
+
+    if (pos == 1) {
+        newnode->next = head;
+        head = newnode;
+        return;
+    }
+
+    temp = head;
+    while (i < pos - 1 && temp != NULL) {
+        temp = temp->next;
+        i++;
+    }
+
+    if (temp == NULL) {
+        printf("Position out of range.\n");
+        free(newnode);
+    } else {
+        newnode->next = temp->next;
+        temp->next = newnode;
+    }
+}
+
+void DeleteFromBeg(){
+    struct node *temp;
+    if(head == NULL){
+        printf("The list is empty.\n");
+    }
+    else{
+        temp = head;
+        head = head->next;
+        free(temp);
+    }
 }
 
 // Function to display the linked list
@@ -85,7 +121,8 @@ int main() {
         printf("2. Insert at the beginning\n");
         printf("3. Insert at the End\n");
         printf("4. Insert at a specific position\n");
-        printf("5. Display List\n");
+        printf("5. Delete from beginning\n");
+        printf("6. Display List\n");
         printf("0. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice); 
@@ -103,7 +140,10 @@ int main() {
             case 4:
                 insertSpecificPosition();
                 break;
-            case 4:
+            case 5:
+                DeleteFromBeg();
+                break;
+            case 6:
                 displayList();
                 break;
             case 0:
