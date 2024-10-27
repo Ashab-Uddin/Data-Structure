@@ -110,6 +110,21 @@ void DeleteEnd(){
     }
     free(temp);
 }
+void DeleteAny(){
+    struct node *temp,*nextnode;
+    int pos,i=1;
+    printf("Enter the position to Delete the node: ");
+    scanf("%d", &pos);
+    temp = head;
+
+    while(i<pos-1){
+        temp = temp->next;
+        i++;
+    }
+    nextnode = temp->next;
+    temp->next = nextnode->next;
+    free(nextnode);
+}
 
 // Function to display the linked list
 void displayList() {
@@ -138,7 +153,8 @@ int main() {
         printf("4. Insert at a specific position\n");
         printf("5. Delete from beginning\n");
         printf("6. Delete from End\n");
-        printf("7. Display List\n");
+        printf("7. Delete at a specific position\n");
+        printf("8. Display List\n");
         printf("0. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice); 
@@ -163,6 +179,9 @@ int main() {
                 DeleteEnd();
                 break;
             case 7:
+                DeleteAny();
+                break;
+            case 8:
                 displayList();
                 break;
             case 0:
