@@ -95,6 +95,21 @@ void DeleteFromBeg(){
         free(temp);
     }
 }
+void DeleteEnd(){
+    struct node *temp,*prevnode;
+    temp = head;
+    while(temp->next != 0){
+        prevnode = temp;
+        temp = temp->next;
+    }
+    if(temp == head){
+        head = NULL;
+    }
+    else{
+        prevnode->next = NULL;
+    }
+    free(temp);
+}
 
 // Function to display the linked list
 void displayList() {
@@ -122,7 +137,8 @@ int main() {
         printf("3. Insert at the End\n");
         printf("4. Insert at a specific position\n");
         printf("5. Delete from beginning\n");
-        printf("6. Display List\n");
+        printf("6. Delete from End\n");
+        printf("7. Display List\n");
         printf("0. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice); 
@@ -144,6 +160,9 @@ int main() {
                 DeleteFromBeg();
                 break;
             case 6:
+                DeleteEnd();
+                break;
+            case 7:
                 displayList();
                 break;
             case 0:

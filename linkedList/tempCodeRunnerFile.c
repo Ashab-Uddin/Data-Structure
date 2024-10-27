@@ -1,6 +1,1 @@
-case 3:
-            //     insertEnd();
-            //     break;
-            // case 4:
-            //     insertSpecificPosition();
-            //     break;
+printf("6. Delete from End\n");
