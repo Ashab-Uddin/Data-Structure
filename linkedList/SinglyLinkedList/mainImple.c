@@ -80,7 +80,7 @@ void insertSpecificPosition(){
         free(newnode);
     } else {
         newnode->next = temp->next;
-        temp->next = newnode;
+        temp->next = newnode; 
     }
 }
 
@@ -169,6 +169,30 @@ void ReverseList(){
     }
     head = prevNode;
 }
+void Search() {
+    struct node *temp;
+    int item, position = 1;  // Initialize position to 1 for the head node
+    printf("Enter the item you want to search: ");
+    scanf("%d", &item);
+
+    temp = head;
+
+    if (temp == NULL) {
+        printf("The list is empty.\n");
+        return;
+    }
+
+    while (temp != NULL) {
+        if (temp->data == item) {
+            printf("Item %d is found at position %d\n", item, position);
+            return; 
+        }
+        temp = temp->next;
+        position++;
+    }
+    printf("Item %d is not found in the list.\n", item);
+}
+
 
 // Function to display the linked list
 void displayList() {
@@ -200,7 +224,8 @@ int main() {
         printf("7. Delete at a specific position\n");
         printf("8. Fint the length of Linked list\n");
         printf("9. Reverse Linked list\n");
-        printf("10. Display List\n");
+        printf("10. Search Item\n");
+        printf("11. Display List\n");
         printf("0. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice); 
@@ -234,6 +259,9 @@ int main() {
                 ReverseList();
                 break;
             case 10:
+                Search();
+                break;
+            case 11:
                 displayList();
                 break;
             case 0:
