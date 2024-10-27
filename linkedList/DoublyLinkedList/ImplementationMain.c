@@ -92,7 +92,7 @@ int main() {
             // case 10:
             //     Search();
             //     break;
-            case 2:
+            case 11:
                 displayList();
                 break;
             case 0:
