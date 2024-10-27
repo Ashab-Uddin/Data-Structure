@@ -110,20 +110,64 @@ void DeleteEnd(){
     }
     free(temp);
 }
-void DeleteAny(){
-    struct node *temp,*nextnode;
-    int pos,i=1;
-    printf("Enter the position to Delete the node: ");
+void DeleteAny() {
+    struct node *temp, *nextnode;
+    int pos, i = 1;
+    printf("Enter the position to delete the node: ");
     scanf("%d", &pos);
-    temp = head;
 
-    while(i<pos-1){
+    if (head == NULL) {
+        printf("The list is empty.\n");
+        return;
+    }
+
+    if (pos == 1) {
+        DeleteFromBeg();
+        return;
+    }
+
+    temp = head;
+    while (i < pos - 1 && temp != NULL) {
         temp = temp->next;
         i++;
     }
-    nextnode = temp->next;
-    temp->next = nextnode->next;
-    free(nextnode);
+
+    if (temp == NULL || temp->next == NULL) {
+        printf("Position out of range.\n");
+    } else {
+        nextnode = temp->next;
+        temp->next = nextnode->next;
+        free(nextnode);
+    }
+}
+void GetLength(){
+    struct node *temp;
+    int count = 0;
+    temp = head;
+
+    if(head == NULL){
+        printf("The list is empty\n");
+    }
+    else{
+        while(temp != 0){
+            count++;
+            temp = temp->next;
+        }
+        printf("Length is: %d",count);
+    }
+}
+
+void ReverseList(){
+    struct node *prevNode,*currentNode,*nextNode;
+    prevNode = NULL;
+    currentNode = nextNode = head;
+    while(nextNode != 0){
+        nextNode = nextNode->next;
+        currentNode->next = prevNode;
+        prevNode = currentNode;
+        currentNode = nextNode;
+    }
+    head = prevNode;
 }
 
 // Function to display the linked list
@@ -154,7 +198,9 @@ int main() {
         printf("5. Delete from beginning\n");
         printf("6. Delete from End\n");
         printf("7. Delete at a specific position\n");
-        printf("8. Display List\n");
+        printf("8. Fint the length of Linked list\n");
+        printf("9. Reverse Linked list\n");
+        printf("10. Display List\n");
         printf("0. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice); 
@@ -182,6 +228,12 @@ int main() {
                 DeleteAny();
                 break;
             case 8:
+                GetLength();
+                break;
+            case 9:
+                ReverseList();
+                break;
+            case 10:
                 displayList();
                 break;
             case 0:

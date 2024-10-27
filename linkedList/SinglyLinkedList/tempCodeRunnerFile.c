@@ -1,1 +1,1 @@
-printf("6. Delete from End\n");
+in
