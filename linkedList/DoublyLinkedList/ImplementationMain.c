@@ -62,6 +62,45 @@ void insertEnd(){
     }
 }
 
+void insertSpecificPosition(){
+    int pos, i = 1;
+    struct node *temp, *newnode;
+
+    printf("Enter the position you want to insert: ");
+    scanf("%d", &pos);
+
+    if (pos == 1) {
+        insertFirst();
+        return;
+    }
+
+    newnode = (struct node*)malloc(sizeof(struct node));
+    printf("Enter the data: ");
+    scanf("%d", &newnode->data);
+
+    temp = head;
+
+    // Traverse to the (pos - 1)th node or until temp becomes NULL
+    while (i < pos - 1 && temp != NULL) {
+        temp = temp->next;
+        i++;
+    }
+
+    // If temp is NULL, the position is out of range
+    if (temp == NULL) {
+        printf("Position out of range.\n");
+        free(newnode);
+        return;
+    }
+
+        newnode->prev = temp;
+        newnode->next = temp->next;
+        temp->next = newnode;
+        newnode->next->prev = newnode;
+
+    }
+
+
 void displayList() {
     struct node *temp = head;
     if (temp == NULL) {
@@ -107,9 +146,9 @@ int main() {
             case 3:
                 insertEnd();
                 break;
-            // case 4:
-            //     insertSpecificPosition();
-            //     break;
+            case 4:
+                insertSpecificPosition();
+                break;
             // case 5:
             //     DeleteFromBeg();
             //     break;

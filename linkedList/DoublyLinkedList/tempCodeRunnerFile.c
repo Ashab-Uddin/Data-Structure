@@ -1,1 +1,1 @@
-displayList()
+printf
