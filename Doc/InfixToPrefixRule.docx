@@ -1,0 +1,50 @@
+
+Here is the English text of the rules for infix to postfix conversion as shown in the image:
+
+---
+
+1) Print operands as they arrive.
+
+2) If the stack is empty or contains a left parenthesis on top, push the incoming operator onto the stack.
+
+3) If the incoming symbol is '(', push it onto the stack.
+
+4) If the incoming symbol is ')', pop the stack and print the operators until a left parenthesis is found.
+
+5) If the incoming symbol has higher precedence than the operator at the top of the stack, push it onto the stack.
+
+6) If the incoming symbol has lower precedence than the top of the stack, pop and print the top. Then test the incoming operator against the new top of the stack.
+
+7) If the incoming operator has equal precedence with the top of the stack, use the associativity rule.
+
+8) At the end of the expression, pop and print all operators from the stack.
+
+---
+
+On the right side:
+
+- **L to R (Left to Right)**: If the associativity is left-to-right, then pop and print the top of the stack, and then push the incoming operator.
+- **R to L (Right to Left)**: If the associativity is right-to-left, then directly push the incoming operator onto the stack.
+
+১) অপারেন্ডগুলো আসার সাথে সাথেই প্রিন্ট করো।
+
+২) যদি স্ট্যাক খালি থাকে অথবা টপে বাম বন্ধনী থাকে, তবে আগত অপারেটরকে স্ট্যাকে পুশ করো।
+
+৩) যদি আগত সিম্বল '(' হয়, তবে এটিকে স্ট্যাকে পুশ করো।
+
+৪) যদি আগত সিম্বল ')' হয়, তবে স্ট্যাককে পপ করো এবং বাম বন্ধনী পাওয়া পর্যন্ত অপারেটরগুলো প্রিন্ট করো।
+
+৫) যদি আগত সিম্বলের প্রাধান্য টপে থাকা অপারেটরের চেয়ে বেশি হয়, তবে এটিকে স্ট্যাকে পুশ করো।
+
+৬) যদি আগত সিম্বলের প্রাধান্য টপে থাকা অপারেটরের চেয়ে কম হয়, তবে টপকে পপ করো এবং প্রিন্ট করো। এরপর নতুন টপের সাথে আগত অপারেটরের প্রাধান্য পরীক্ষা করো।
+
+৭) যদি আগত অপারেটরের প্রাধান্য টপে থাকা অপারেটরের সমান হয়, তবে সহমর্মিতা নিয়ম (associativity rule) ব্যবহার করো।
+
+৮) এক্সপ্রেশন শেষ হলে, স্ট্যাকের সকল অপারেটরকে পপ করো এবং প্রিন্ট করো।
+
+---
+
+ডানদিকে উল্লেখিত:
+
+- **L to R** (বামে থেকে ডানে): যদি অ্যাসোসিয়েটিভিটি বামে থেকে ডানে হয়, তবে স্ট্যাকের টপকে পপ এবং প্রিন্ট করো, এরপর আগত অপারেটরকে পুশ করো।
+- **R to L** (ডানে থেকে বামে): যদি অ্যাসোসিয়েটিভিটি ডানে থেকে বামে হয়, তবে আগত অপারেটরকে সরাসরি পুশ করো।

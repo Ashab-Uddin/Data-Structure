@@ -20,6 +20,12 @@ int main () {
     it1.next = NULL;
     
     it.next = &it1;
+
+    struct Node it2;
+    it2.value = 60;
+    it2.next = NULL;
+
+    it1.next = &it2; 
     
     struct Node *temp = head;
     while (temp != NULL) {
@@ -32,24 +38,3 @@ int main () {
 
 
 
-/*
-struct Item {
-    int a;
-    struct Item *b;
-}; 
-
-
-int main () {
-    struct Item it, it1;
-    it.a = 24;
-    it.b = &it1;
-    
-    printf ("%d \n", it.a);
-    
-    (it.b)->a = 45;
-    
-    printf ("%d %d\n", it1.a, (it.b)->a);
-    
-    return 0;
-}
-*/

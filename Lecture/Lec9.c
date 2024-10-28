@@ -27,6 +27,7 @@ struct Node* InsertFirst (struct Node* head) {
     
     return head;
 }
+/*
 
 struct Node* DeleteFirst (struct Node* head) {
     struct Node* current = head;
@@ -37,6 +38,7 @@ struct Node* DeleteFirst (struct Node* head) {
     return head;
 }
 
+*/
 
 void PrintNodes (struct Node* head) {
     struct Node* temp = head;
@@ -56,9 +58,10 @@ int main () {
     head = InsertFirst (head);
     
     PrintNodes (head);
-    
+    /*
     head = DeleteFirst (head);
     PrintNodes (head);
+    */
     
     return 0;
 }
