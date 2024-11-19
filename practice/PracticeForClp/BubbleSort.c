@@ -1,7 +1,8 @@
 #include<stdio.h>
 void bubbleSort(int A[],int n){
     int temp,flag;
-    for(int i = 0;i<n-1; i++){
+    
+    for(int i = 0; i<n-1; i++){
         flag = 0;
         for(int j = 0; j<n-1-i; j++){
             if(A[j]>A[j+1]){
@@ -11,17 +12,17 @@ void bubbleSort(int A[],int n){
                 flag = 1;
             }
         }
-    if(flag == 0){
-        break;
-    }
+        if(flag == 0){
+            break;
+        }
     }
 }
 int main(){
-    int A[] = {9,2,4,1,5,4,8,2,1,6};
+    int A[] = {9,4,2,4,2,5,2,6,1,6,2,6,7,7,2,52,2,51,0};
     int n = sizeof(A)/sizeof(A[0]);
-
+    
     printf("Before Sort: ");
-    for(int i = 0;i<n;i++){
+    for(int i = 0;i<n; i++){
         printf("%d ",A[i]);
     }
 
@@ -33,4 +34,6 @@ int main(){
     for(int i = 0; i<n; i++){
         printf("%d ",A[i]);
     }
+
+    return 0;
 }
