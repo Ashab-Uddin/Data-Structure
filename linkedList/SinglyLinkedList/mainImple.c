@@ -214,6 +214,7 @@ int main() {
     int choice;
 
     do {
+        printf("\nWelcome to the Singly LinkedList Implementation\n");
         printf("\nMenu:\n");
         printf("1. Create new node\n");
         printf("2. Insert at the beginning\n");

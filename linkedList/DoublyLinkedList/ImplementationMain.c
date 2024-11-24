@@ -259,7 +259,7 @@ int main() {
         }
     } while (choice != 0); 
 
-    displayList();  
+    // displayList();  
     
     return 0;
 }
