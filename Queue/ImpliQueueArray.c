@@ -42,7 +42,7 @@ void dequeue() {
 
 // Function to display the elements in the queue
 void display() {
-    if (front == -1 || front > rear) {
+    if (front == -1 && rear == -1) {
         printf("The Queue is Empty\n");
     } else {
         printf("Queue elements: ");
