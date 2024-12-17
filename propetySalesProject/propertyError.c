@@ -90,7 +90,7 @@ void Search() {
             found = 1;
             printf("Property found:\n");
             printf("UID: %d, Address: %s, ZIP: %d, Size: %.2f, Year: %d, Price: %.2f\n",
-                   pop[i].uid, pop[i].address, pop[i].zip, pop[i].size, pop[i].year, pop[i].price);
+                pop[i].uid, pop[i].address, pop[i].zip, pop[i].size, pop[i].year, pop[i].price);
             break;
         }
     }
@@ -110,7 +110,7 @@ void PrintDB() {
     for (int i = 0; i <= t; i++) {
         printf("\nProperty %d:\n", i + 1);
         printf("UID: %d, Address: %s, ZIP: %d, Size: %.2f sqft, Year: %d, Price: %.2f\n",
-               pop[i].uid, pop[i].address, pop[i].zip, pop[i].size, pop[i].year, pop[i].price);
+            pop[i].uid, pop[i].address, pop[i].zip, pop[i].size, pop[i].year, pop[i].price);
     }
 }
 
