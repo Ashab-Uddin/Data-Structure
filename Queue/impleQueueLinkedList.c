@@ -1,65 +1,70 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-struct node{
+struct node {
     int data;
     struct node *next;
 };
 struct node *front = NULL;
 struct node *rear = NULL;
 
-void enqueue(){
+void enqueue() {
     struct node *newnode = (struct node*)malloc(sizeof(struct node));
     printf("Enter the data: ");
-    scanf("%d",&newnode->data);
+    scanf("%d", &newnode->data);
     newnode->next = NULL;
 
-    if(front == 0 && rear == 0){
+    if (front == NULL && rear == NULL) { // Check if queue is empty
         front = rear = newnode;
-    }
-    else{
+    } else {
         rear->next = newnode;
         rear = newnode;
     }
     printf("\nEnqueue Data Successfully\n");
 }
-void dequeue(){
+
+void dequeue() {
     struct node *temp;
-    if(front == 0 && rear == 0){
-        printf("The Queue is Empty");
-    }
-    else{
+    if (front == NULL && rear == NULL) { // Check if queue is empty
+        printf("The Queue is Empty\n");
+    } else {
         temp = front;
         front = front->next;
         free(temp);
 
+        if (front == NULL) { // If the queue becomes empty
+            rear = NULL;
+        }
+        printf("\nDequeued Successfully\n");
     }
 }
-void Display(){
-    struct node *temp;
-    temp = front;
-    if(front == NULL && rear == NULL){
+
+void Display() {
+    struct node *temp = front;
+
+    if (front == NULL) { // Check if queue is empty
         printf("The Queue is Empty\n");
-    }
-    else{
-        while(temp != NULL){
-            printf("%d ",temp->data);
+    } else {
+        while (temp != NULL) {
+            printf("%d ", temp->data);
             temp = temp->next;
         }
+        printf("\n");
     }
 }
-int main(){
+
+int main() {
     int choice;
-    do{
+    do {
         printf("\nQueue Implementation Using Linked List\n");
         printf("\n1. Enqueue");
         printf("\n2. Dequeue");
         printf("\n3. Display");
         printf("\n0. Exit");
-        printf("Enter Your Choice: ");
-        scanf("%d",&choice);
+        printf("\nEnter Your Choice: ");
+        scanf("%d", &choice);
 
-        switch(choice){
+        switch (choice) {
             case 1:
                 enqueue();
                 break;
@@ -70,12 +75,12 @@ int main(){
                 Display();
                 break;
             case 0:
-                printf("Exiting....");
+                printf("Exiting....\n");
                 break;
             default:
-            printf("Invalid Choice! Please Try Again Later");
+                printf("Invalid Choice! Please Try Again\n");
         }
-    }while(choice != 0);
+    } while (choice != 0);
 
     return 0;
 }
