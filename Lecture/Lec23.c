@@ -1,7 +1,21 @@
+/*
+       (0)
+       / \
+      /   \
+    (1)---(2)
+     |\   /|
+     | \ / |
+     |  X  |
+     | / \ |
+    (3)---(4)
+implementation of adjacency matrix 
+*/
+
+
 #include <stdio.h>
 
 #define NoV 5
-//implementation of adjacency matrix 
+                
 void AddEdge (int Graph[][NoV], int i, int j) {
     Graph[i][j] = 1;
     Graph[j][i] = 1;

@@ -1,6 +1,17 @@
+/*
+    (0)
+    / \
+    /   \
+    (1)---(2)
+    |\   /|
+    | \ / |
+    |  X  |
+    | / \ |
+    (3)---(4)
+implementation of DFS using adjacency List
+*/
 #include <stdio.h>
 #include <stdlib.h>
-                            //implementation of DFS using adjacency List
 struct Node {
     int vertex;
     struct Node* next;

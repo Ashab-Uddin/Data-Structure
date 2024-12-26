@@ -1,6 +1,19 @@
+
+/*
+    (0)
+    / \
+    /   \
+    (1)---(2)
+    |\   /|
+    | \ / |
+    |  X  |
+    | / \ |
+    (3)---(4)
+implementation of BFS using adjacency list
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
-                                //implementation of BFS using adjacency list
 #define NoV 5
 
 struct Node {

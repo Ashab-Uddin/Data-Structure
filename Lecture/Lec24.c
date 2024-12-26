@@ -1,6 +1,18 @@
+
+/* implementation of adjacency list 
+    (0)
+    /   \
+    /     \
+  (1)     (3)
+   |
+   |
+  (2)
+
+  */
+
 #include <stdio.h>
 #include <stdlib.h>
-                        //implementation of adjacency list
+
 struct Node {
     int vertex;
     struct Node* next;

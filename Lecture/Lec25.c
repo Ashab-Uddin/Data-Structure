@@ -1,5 +1,17 @@
+/*
+    (0)
+    / \
+    /   \
+    (1)---(2)
+    |\   /|
+    | \ / |
+    |  X  |
+    | / \ |
+    (3)---(4)
+implementation of DFS using adjacency matrix
+*/
+
 #include <stdio.h>
-                    //implementation of DFS using adjacency matrix
 #define NoV 5
 
 void AddEdge (int Graph[][NoV], int i, int j) {
