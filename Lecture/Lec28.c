@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+                                //implementation of BFS using adjacency list
 #define NoV 5
 
 struct Node {

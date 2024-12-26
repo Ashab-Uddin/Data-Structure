@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+                            //implementation of DFS using adjacency List
 struct Node {
     int vertex;
     struct Node* next;

@@ -29,7 +29,12 @@ void enQueue (int Q[], int element) {
     Q[rear] = element;
 }
 
-int getFront (int Q[]) {
+int getFront (int Q[]){
+        if (isEmpty()) {
+        printf ("Queue is empty\n");
+        return;
+    }
+
     return Q[front];
 }
 
@@ -38,8 +43,10 @@ void deQueue (int Q[]) {
         printf ("Queue is empty\n");
         return;
     }
-    else if (front > rear)
+    // else if (front > rear) is not correct or prefer sir likse j
+    else if(front == rear){
         front = rear = -1;
+    }
     else
         front += 1;
 }
@@ -49,7 +56,7 @@ void Display (int Q[]) {
         printf ("Queue is empty\n");
         return;
     }
-    
+    printf("Queue elements: ");
     for (int i = front; i <= rear; i++)
         printf ("%d ", Q[i]);
     printf ("\n");

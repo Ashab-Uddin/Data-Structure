@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+                        //implementation of adjacency list
 struct Node {
     int vertex;
     struct Node* next;

@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+                                //implementation of BFS using adjacency matrix
 #define NoV 5
 
 void AddEdge (int Graph[][NoV], int i, int j) {
