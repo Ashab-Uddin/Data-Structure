@@ -12,7 +12,7 @@ void Push() {
     newnode = (struct node*)malloc(sizeof(struct node));
     printf("Enter the data: ");
     scanf("%d", &newnode->data);
-    newnode->next = top;
+    newnode->next = top; 
     top = newnode;
 }
 

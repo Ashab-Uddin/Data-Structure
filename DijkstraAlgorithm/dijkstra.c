@@ -27,7 +27,7 @@ void printSolution(int dist[], int vertices) {
     int v;
     printf("Enter the vertics you want to go: ");
     scanf("%d",&v);
-    printf("Distance: %d m.",dist[v]);
+    printf("Distance: %d m.",dist[v]);  
 }
 
 // Dijkstra's algorithm function

@@ -4,10 +4,11 @@
       /   \
     (1)---(2)
     |\   /|
-    | \ / |
-    |  X  |
+    | \ X |
+    |  \ |
     | / \ |
     (3)---(4)
+    
 implementation of adjacency matrix 
 */
 

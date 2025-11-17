@@ -45,7 +45,7 @@ void BFS (int Graph[][NoV], int start_vertex) {
         for (int i = 0; i < NoV; i++) {
             if (Graph[current_vertex][i] == 1 && Visited[i] == 0) {
                 Queue[rear] = i;
-                rear += 1;
+                rear += 1; 
                 Visited[i] = 1;
             }
         }

@@ -41,7 +41,7 @@ struct Graph* CreateGraph (int NoV) {
         graph->Visited[i] = 0;
     }
     
-    return graph;
+    return graph; 
 }
 
 void AddEdge (struct Graph* graph, int i, int j) {

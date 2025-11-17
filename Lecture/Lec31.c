@@ -12,6 +12,7 @@ void Insert (int BinaryTree[], int index, int value) {
     BinaryTree[index] = value;
 }
 
+
 void Display (int BinaryTree[]) {
     if (BinaryTree[0] == -1) {
         printf ("Tree is empty\n");

@@ -81,6 +81,7 @@ int main () {
     deQueue ();
     display ();
     deQueue ();
+    printf("\n");
     display ();
     return 0;
 }
